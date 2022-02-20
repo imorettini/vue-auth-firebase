@@ -1,26 +1,38 @@
 <template>
   <div class="vue-login">
-    <h1>Login</h1>
-    <input type="text" placeholder="Email" />
-    <br />
-    <br />
-    <input type="password" placeholder="Senha" />
-    <br />
-    <div class="btn-login">
+    <Root>
+      <H1>Login</H1>
+      <Input type="text" placeholder="Email" />
       <br />
-      <button @click="login">Login</button>
-    </div>
-    <p>
-      Você não tem conta?
-      <span>
-        <router-link to="/registrar">crie uma conta</router-link>
-      </span>
-    </p>
+      <br />
+      <Input type="password" placeholder="Senha" />
+      <br />
+      <div class="btn-login">
+        <br />
+        <Button @click="login">Login</Button>
+      </div>
+      <P>
+        Você não tem conta?
+        <span>
+          <router-link to="/registrar">crie uma conta</router-link>
+        </span>
+      </P>
+    </Root>
   </div>
 </template>
 
 <script>
+import "lume/dist/lib/lume.css";
+import { Root, H1, P, Button, Input} from "lume";
+
 export default {
+  components: {
+    Root,
+    H1,
+    P,
+    Button,
+    Input
+  },
   name: "vue-login",
   data() {
     return {};
@@ -33,7 +45,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .login {
   margin-top: 40px;
 }
